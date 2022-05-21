@@ -1,0 +1,42 @@
+server:
+  port: ${PORT:0}
+  servlet:
+    context-path: /resource-server
+
+spring:
+  application:
+    name: resource-server
+  profiles:
+    active: local
+  cloud:
+    config:
+      fail-fast: true
+      retry:
+        max-attempts: 20
+        max-interval: 15000
+        initial-interval: 10000
+      discovery:
+        enabled: true
+        service-id: config-server
+      username: aztec
+      password: aztec123
+
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://aztec:aztec123@localhost:8010/eureka
+  instance:
+    prefer-ip-address: false
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    secure-port: ${server.port}
+    status-page-url: http://localhost:${server.port}/actuator/info
+    health-check-url: http://localhost:${server.port}/actuator/health
+    home-page-url: http://localhost:${server.port}
+    hostname: localhost
+
+
