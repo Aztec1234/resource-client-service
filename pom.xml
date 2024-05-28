@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
+        <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.aztec</groupId>
@@ -14,8 +14,8 @@
     <name>resource-client-service</name>
     <description>Prototype resource client service</description>
     <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>2021.0.3-SNAPSHOT</spring-cloud.version>
+        <java.version>21</java.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
     </properties>
     <dependencies>
         <!-- spring dependencies -->

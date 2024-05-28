@@ -1,5 +1,4 @@
 server:
-  port: ${PORT:0}
   servlet:
     context-path: /resource-server
 
@@ -18,9 +17,6 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-      username: aztec
-      password: aztec123
-
 
 eureka:
   client:
@@ -28,15 +24,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://aztec:aztec123@localhost:8010/eureka
+      defaultZone: http://localhost:8010/eureka
   instance:
     prefer-ip-address: false
-    non-secure-port-enabled: false
-    secure-port-enabled: true
-    secure-port: ${server.port}
-    status-page-url: http://localhost:${server.port}/actuator/info
-    health-check-url: http://localhost:${server.port}/actuator/health
-    home-page-url: http://localhost:${server.port}
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    instance-id: ${spring.application.name}:${random.int[1,9999]} # Random instance ID
+    metadata-map:
+      instance.port: ${local.server.port}  # Retrieve port from local server configuration
     hostname: localhost
-
-
