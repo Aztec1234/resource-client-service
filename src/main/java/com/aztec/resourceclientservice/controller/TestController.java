@@ -9,6 +9,6 @@ public class TestController {
     @GetMapping("/test")
     public String testController(){
         System.out.println("Hello from Resource Server");
-        return "Hello! I am working";
+        return "Hello from Resource Server 1";
     }
 }
