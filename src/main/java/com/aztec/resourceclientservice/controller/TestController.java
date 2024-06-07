@@ -14,7 +14,7 @@ public class TestController {
     @GetMapping("/test")
     public String testController(){
         System.out.println("Hello from Resource Server");
-        testService.printProps();
+        testService.sendMessageToQueue();
         return "Hello from Resource Server 1";
     }
 }
