@@ -18,6 +18,11 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
 
 eureka:
   client:
@@ -34,3 +39,4 @@ eureka:
     metadata-map:
       instance.port: ${local.server.port}  # Retrieve port from local server configuration
     hostname: localhost
+
